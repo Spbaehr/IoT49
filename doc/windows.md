@@ -20,20 +20,7 @@ In the installer window, make sure that `Install launcher` and `Add Python 3.6 t
 
 Bring up an Command Prompt (click the Windows or Start button, type `cmd` and click `Command Prompt`).
 
-At the command prompt type `python`. Verify that Python announces itself with the correct version (3.6) and type the following commands:
-
-```
-from os.path import expanduser  
-expanduser("~")
-```
-
-The result will look similar to 
-
-```
-'C:\\Users\\joe'
-```
-
-For this example, the home folder is `C:\Users\joe`. Take note of your home folder, then type `exit()` to quit the Python interpreter.
+At the command prompt type `python`. Verify that Python announces itself with the correct version (3.6). Type `exit()` to quit the Python interpreter.
 
 Back at the Windows Command Prompt, issue the following instructions to install additional packages:
 
@@ -44,9 +31,23 @@ pip install matplotlib
 
 ## 3) Download the Programming Environment
 
-Navigate to [https://github.com/bboser/IoT49](https://github.com/bboser/IoT49) on github, click `Clone or download` and then `Download ZIP` and `Save`.  
+Install `git` from [https://git-for-windows.github.io](https://git-for-windows.github.io). Accept the default options.
 
-Go to the `Download` folder, click on the downloaded zip file and copy the folder `IoT49-master` to your home (`C:\\Users\\joe` in the example in step 2 above). Rename the folder to `IoT49`.
+Click the Windows button and type `git` in the search field. Click on `Git Bash`. In the window that opens type the following command:
+
+```
+git clone https://github.com/bboser/IoT49.git
+```
+
+This downloads the `IoT49 MicroPython programming environment` to the hard drive of your computer.
+
+If you ever need to update the environment, open a `Git Bash` window and enter the following commands:
+
+```
+cd IoT49
+git pull
+git submodule update --init --recursive
+``` 
 
 ## 4) Update the Command Search Path
 
@@ -65,7 +66,7 @@ Hit `OK` a couple of times to quit the variable editor. Close and reopen all Com
 
 ## Flash the MicroPython Firmware to the ESP32
 
-Connect the ESP32 to the computer via USB. Open a command window and type 
+Connect the ESP32 to the computer via USB. Open a Windows `Command Prompt` and type 
 
 ```
 flash.py
