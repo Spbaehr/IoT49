@@ -1,5 +1,5 @@
 # HUZZAH32 pin definitions
-name = "EE49_Huzzah32"
+name = "EE49"
 
 A0 = const(26)
 A1 = const(25)

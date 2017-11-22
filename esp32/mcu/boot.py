@@ -1,16 +1,34 @@
 import micropython, machine, network, time, sys, binascii
 
-
 # edit to match your WiFi settings
 known_wifi_nets = {
     # SSID : PSK (passphrase)
+    b"TPA": "TurbenThal",
+    b"EE49": "EE49-only",
     b"EECS-PSK": "Thequickbrown",
 }
+
+# board identifier
+def get_id():
+    return machine.nvs_getstr('ID')
 
 # micropython internals
 micropython.alloc_emergency_exception_buf(100)
 
-# connect to wifi and get time from internet
+# fix path
+sys.path.append('/flash/lib')
+
+# convenience functions
+def mac_address():
+    return binascii.hexlify(wlan.config('mac'), ':')
+
+def ip_address():
+    return wlan.ifconfig()[0]
+
+# establish wifi connection & initialize rtc with ntp time
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+
 def wifi_rtc():
     global wlan
     print("Connecting to WLAN ...")
@@ -45,12 +63,9 @@ def wifi_rtc():
         else:
             print("Unable to get ntp time")
 
-# set this to true to connect to wifi on boot            
-if False:
-    wlan = network.WLAN(network.STA_IF)
-    wlan.active(True)
-    wifi_rtc()
-    network.telnet.start()
+# connect to wifi
+wifi_rtc()
 
-# fix path
-sys.path.append('/flash/lib')
+# start servers
+network.telnet.start()
+network.ftp.start()

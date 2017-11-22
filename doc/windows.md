@@ -20,28 +20,43 @@ In the installer window, make sure that `Install launcher` and `Add Python 3.6 t
 
 Bring up an Command Prompt (click the Windows or Start button, type `cmd` and click `Command Prompt`).
 
-At the command prompt type `python`. Verify that Python announces itself with the correct version (3.6) and try a few commands at the prompt, e.g. `3+5`. If everything works as expected, type `exit()` to quit the Python interpreter.
+At the command prompt type `python`. Verify that Python announces itself with the correct version (3.6) and type the following commands:
 
-Back at the command prompt, issue the following instructions to install additional packages:
+```
+from os.path import expanduser  
+expanduser("~")
+```
+
+The result will look similar to 
+
+```
+'C:\\Users\\joe'
+```
+
+For this example, the home folder is `C:\Users\joe`. Take note of your home folder, then type `exit()` to quit the Python interpreter.
+
+Back at the Windows Command Prompt, issue the following instructions to install additional packages:
 
 ```
 pip install pyserial
 pip install matplotlib
 ```
 
-## 3) Install the Programming Environment
+## 3) Download the Programming Environment
 
 Navigate to [https://github.com/bboser/IoT49](https://github.com/bboser/IoT49) on github, click `Clone or download` and then `Download ZIP` and `Save`.  
 
-Go to the `Download` folder, click on the downloaded zip file and copy the folder `EE49-env-master` to a convenient location, e.g. your `Documents`, folder `C:\Users\joe\Documents` (replace `joe` with your login name). Rename the folder to `EE49`. Write down the full path to the environment, e.g. `C:\Users\joe\Documents\EE49`.
+Go to the `Download` folder, click on the downloaded zip file and copy the folder `IoT49-master` to your home (`C:\\Users\\joe` in the example in step 2 above). Rename the folder to `IoT49`.
 
-## Edit the Environment Variables
+## 4) Update the Command Search Path
 
 Click the Windows button and type `env`, then click `Edit environment variables for your account`.
 
-Under `User variables for ...`, select `Path` and click `Edit...`. Click new and enter the path where you copied the EE49 Programming Environment, followed by `\bin`. E.g. `C:\Users\joe\Documents\EE49\bin`. Click `OK`.
+Under `User variables for ...`, select `Path` and click `Edit...`. Click new and enter the path where you copied the EE49 Programming Environment, followed by `\bin`. E.g. `C:\Users\joe\IoT49\bin`. Click `OK`.
 
-Back to the screen showing `User variables for ...`, select `New` to create a new environment variable and enter `EE49` for the name and the path to your EE49 folder for the value, e.g. `C:\Users\joe\Documents\EE49`. Note there is no `bin` at the end this time. Hit `OK` a couple of times to quit the variable editor.
+Back to the screen showing `User variables for ...`, select `New` to create a new environment variable and enter `RSHELL_PORT` for the name and the USB COM port (`COM3` for the example in step 1). 
+
+Hit `OK` a couple of times to quit the variable editor.
 
 ## Flash the MicroPython Firmware to the ESP32
 

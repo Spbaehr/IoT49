@@ -801,7 +801,7 @@ def rsync(src_dir, dst_dir, mirror, dry_run, print_func, recursed):
     if dst_files is None: # Directory does not exist
         if not recursed:
             print_err('Destination directory {} does not exist.'.format(dst_dir))
-            return
+            # BEB return
         if not make_dir(dst_dir, dry_run, print_func, recursed):
             return
     else: # dest exists
@@ -2630,6 +2630,7 @@ def real_main():
 
     if args.port:
         try:
+            print("BEB connect")
             connect(args.port, baud=args.baud, wait=args.wait, user=args.user, password=args.password)
         except DeviceError as err:
             print(err)
@@ -2650,13 +2651,14 @@ def real_main():
             print('Welcome to rshell. Use Control-D to exit.')
         if num_devices() == 0:
             print('')
-            print('No MicroPython boards connected - use the connect command to add one')
+            print('No MicroPython boards connected - verify that RSHELL_PORT environment variable is set correctly')
             print('')
-        shell = Shell(timing=args.timing)
-        try:
-            shell.cmdloop(cmd_line)
-        except KeyboardInterrupt:
-            print('')
+    # BEB now just call rsync
+    src_dir = os.path.join(os.getenv('IoT49'), 'esp32/mcu')
+    dst_dir = '/flash'
+    dry_run = False
+    rsync(src_dir, dst_dir, True, dry_run, print, False)
+
 
 def main():
     """This main function saves the stdin termios settings, calls real_main,

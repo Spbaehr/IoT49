@@ -1,6 +1,6 @@
-# EE49 Micropython Programming Environment 
+# IoT49 Micropython Programming Environment 
 
-Firmware and ESP32 MicroPython Programming Environment for UC Berkeley EE49.
+Firmware and ESP32 MicroPython Programming Environment for UC Berkeley EE49. See [https://github.com/bboser/IoT49](https://github.com/bboser/IoT49) for updates.
 
 ## Install
 

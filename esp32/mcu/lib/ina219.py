@@ -3,7 +3,7 @@
 This library supports the INA219 sensor from Texas Instruments with
 MicroPython using the I2C bus.
 
-8/2017 BEB patched (see below)
+8/2017 BEB patched (see below) 
 """
 import logging
 import utime
