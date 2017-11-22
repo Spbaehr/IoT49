@@ -62,13 +62,15 @@ import traceback
 BROKEN_READLINE = True
 FAKE_INPUT_PROMPT = False
 
-import readline
-import rlcompleter
-if 'libedit' in readline.__doc__:
-    readline.parse_and_bind ("bind ^I rl_complete")
-    BROKEN_READLINE = True
-else:
-    readline.parse_and_bind("tab: complete")
+# BEB
+if False:
+    import readline
+    import rlcompleter
+    if 'libedit' in readline.__doc__:
+        readline.parse_and_bind ("bind ^I rl_complete")
+        BROKEN_READLINE = True
+    else:
+        readline.parse_and_bind("tab: complete")
 
 MONTH = ('', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
@@ -2630,7 +2632,6 @@ def real_main():
 
     if args.port:
         try:
-            print("BEB connect")
             connect(args.port, baud=args.baud, wait=args.wait, user=args.user, password=args.password)
         except DeviceError as err:
             print(err)
@@ -2641,22 +2642,24 @@ def real_main():
         autoscan()
     autoconnect()
 
-    if args.filename:
-        with open(args.filename) as cmd_file:
-            shell = Shell(stdin=cmd_file, filename=args.filename, timing=args.timing)
-            shell.cmdloop('')
-    else:
-        cmd_line = ' '.join(args.cmd)
-        if cmd_line == '':
-            print('Welcome to rshell. Use Control-D to exit.')
-        if num_devices() == 0:
-            print('')
-            print('No MicroPython boards connected - verify that RSHELL_PORT environment variable is set correctly')
-            print('')
+    if False:
+        if args.filename:
+            with open(args.filename) as cmd_file:
+                shell = Shell(stdin=cmd_file, filename=args.filename, timing=args.timing)
+                shell.cmdloop('')
+        else:
+            cmd_line = ' '.join(args.cmd)
+            if cmd_line == '':
+                print('Welcome to rshell. Use Control-D to exit.')
+            if num_devices() == 0:
+                print('')
+                print('No MicroPython boards connected - verify that RSHELL_PORT environment variable is set correctly')
+                print('')
     # BEB now just call rsync
     src_dir = os.path.join(os.getenv('IoT49'), 'esp32/mcu')
     dst_dir = '/flash'
     dry_run = False
+    print("Synchronizing {} to {}".format(dst_dir, src_dir))
     rsync(src_dir, dst_dir, True, dry_run, print, False)
 
 
