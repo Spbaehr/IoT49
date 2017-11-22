@@ -14,7 +14,9 @@ port = os.getenv('RSHELL_PORT')
 with open(os.path.join(fw_dir, 'flash_cmd'), 'r') as f:
     flash_cmd = f.read()
 
-cmd = "cd {}; esptool.py --port {} {}".format(fw_dir, port, flash_cmd)
+os.chdir(fw_dir)
+
+cmd = "esptool.py --port {} {}".format(port, flash_cmd)
 
 print("cmd", cmd)
 
