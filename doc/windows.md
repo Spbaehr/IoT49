@@ -54,19 +54,33 @@ Click the Windows button and type `env`, then click `Edit environment variables 
 
 Under `User variables for ...`, select `Path` and click `Edit...`. Click new and enter the path where you copied the EE49 Programming Environment, followed by `\bin`. E.g. `C:\Users\joe\IoT49\bin`. Click `OK`.
 
-Back to the screen showing `User variables for ...`, select `New` to create a new environment variable and enter `RSHELL_PORT` for the name and the USB COM port (`COM3` for the example in step 1). 
+Back to the screen showing `User variables for ...`, select `New` to create the following environment variables (update the values to reflect your setup):
 
-Hit `OK` a couple of times to quit the variable editor.
+Variable      | Value
+------------- | -------------
+PYTHONPATH    | COM3
+RSHELL_PORT   | C:\Users\joe\IoT49\bin\lib
+
+Hit `OK` a couple of times to quit the variable editor. Close and reopen all Command Prompt Windows to update them to the new environment you just set.
 
 ## Flash the MicroPython Firmware to the ESP32
 
-Connect the ESP32 to the computer with a USB cable. Start the `Device Manager` (click the windows icon and type `device` in the search field, then click `Device Manager`). Click on the entry `Ports (COM & LPT)` and look for `Silicon Labs CP210x ...`. Look for the COM port number in parantheses at the end of the line (e.g. `COM3`) and make a note of it.
+Connect the ESP32 to the computer via USB. Open a command window and type 
 
-Open a command window and type `flash32 COM3`. Replace `COM3` with the port you found in the previous step.
+```
+flash.py
+sync.py
+```
+
+The first command installs the MicroPython interpreter on the ESP32. `sync.py` copies Python library files to the microcontroller. You also use this program to copy Python code you wrote to the flash memory on the controller.
 
 ## Install the Atom IDE
 
 Download and install the [Atom Editor](https://atom.io) from {https://atom.io}(https://atom.io). Once installed, start the editor by clicking on the green icon on the desktop. Choose `File->Settings` and click on `+ Install`. Search for `pymakr`. Scroll down to the package with name `Pymakr` in click the install button.
+
+From `File` choose `Add Projects Folder...`. Navigate to `C:\Users\joe\IoT49\esp32` and click `Select Folder`.
+
+After `Pymakr` is downloaded and installed, a window appears near the bottom of the Atom IDE. Click `Settings->Project Settings` and edit the value of the field `"address"` to match the USB port the ESP32 is connected to (e.g. `COM3`). Click `Connect`. If all goes well, the ESP32 announces itself by printing the version of the installed firmware (e.g. `IoT49-2017-11-12`). The `>>>` indicates the interpreter is ready to accept commands. Try `5-9`. It can also do harder calculations, and execute complex Python commands. Try!
 
 
 
