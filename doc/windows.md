@@ -6,9 +6,9 @@ These instructions have been tested on *Windows 10 Pro* Version 16.07 and may ne
 
 Download and install the CP210X USB driver from [https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers). Choose the default version (not the one with Serial Enumeration).
 
-**Important:** For later steps you will need to know the `COM` port of the USB device. To find out what it is, open the Windows `Device Manager`. Click the Windows button (typically in the lower left of the corner of the screen) and type `device` in the search box. The click `Device Manager`. 
+**Important:** For later steps you will need to know the `COM` port of the USB device. To find out what it is, open the Windows `Device Manager`. Click the Windows button (typically in the lower left of the corner of the screen) and type `device` in the search box. Click `Device Manager`. 
 
-Connect the ESP32 microcontroller to a free USB port. Then open the tab `Ports (CMO & LPT)` in the device manager. Look for the line starting with `Silicon Labs CP210x`. The port you are looking for is listed in parantheses at the end of the line, e.g. `COM3`. Be sure to always connect the ESP32 to the same physical USB port as the port number may be different for other connectors. 
+Connect the ESP32 microcontroller to a free USB port. Then open the tab `Ports (COM & LPT)` in the device manager. Look for the line starting with `Silicon Labs CP210x`. The port you are looking for is listed in parantheses at the end of the line, e.g. `COM3`. Be sure to always connect the ESP32 to the same physical USB port as the port number may be different for other connectors. 
 
 Installing drivers requires *Administrator Privileges*. On the EECS IoT49 Labs computers the USB driver has already been installed for you.
 

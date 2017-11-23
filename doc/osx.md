@@ -10,9 +10,11 @@ Download and install the CP210X USB driver from [https://www.silabs.com/products
 
 **Important:** For later steps you will need to know the name of the port of the USB device. To find out what it is, connect the ESP32 microcontroller to a free USB port. Then open a terminal window (search `Terminal` from the command bar and click on the appropriate result) and type `ls /dev` at the prompt. You will be presented with a long list of device names. The one you are looking for likely contains the string `USB`. Try `ls /dev/*USB*` to get a list of only those devices. Likely the name you are looking for is '/dev/cu.SLAB_USBtoUART' (`/dev/ttyUSB0` on Linux). Unplug the ESP32 and run `ls /dev/*USB*` again. If the device is no longer present in the listing it is the one you are looking for.
 
+**Linux:** On Linux, the user may need to be added to the dialout group to have access to the USB port without being root. E.g. on Ubuntu, run `sudo usermod -a -G dialout $USER`.
+
 ## 2) Install Python 3
 
-Download and install [Python 3.6](https://conda.io/miniconda.html) from [https://conda.io/miniconda.html](https://conda.io/miniconda.html).
+Download and install [Python 3.6](https://conda.io/miniconda.html) from [https://conda.io/miniconda.html](https://conda.io/miniconda.html). Other Python 3 distributions may work as well.
 
 Bring up a Terminal window and type `python` at the prompt. Verify that Python announces itself with the correct version (3.6). Type `exit()` to quit the Python interpreter.
 
