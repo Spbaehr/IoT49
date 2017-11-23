@@ -78,7 +78,7 @@ Download and install the [Atom Editor](https://atom.io) from {https://atom.io}(h
 
 From `File` choose `Add Projects Folder...`. Navigate to `/Users/joe/IoT49/esp32` and click `Select Folder`.
 
-After `Pymakr` is downloaded and installed, the MicroPython command window appears near the bottom of the Atom IDE. Click `Settings->Project Settings` and edit the value of the field `"address"` to match the USB port the ESP32 is connected to (e.g. `cu.SLAB_USBtoUART`). Click `Connect`. 
+After `Pymakr` is downloaded and installed, the MicroPython command window appears near the bottom of the Atom IDE. Click `Settings->Project Settings` and edit the value of the field `"address"` to match the USB port the ESP32 is connected to (e.g. `/dev/cu.SLAB_USBtoUART`). Click `Connect`. 
 
 If all goes well, the ESP32 announces itself by printing the version  (e.g. `IoT49-2017-11-12`) and other details about the installed firmware. 
 
