@@ -1,4 +1,4 @@
-# Install uPython on Windows
+# Install the uPython Programming Environment on Windows
 
 These instructions have been tested on *Windows 10 Pro* Version 16.07 and may need modifications on other versions of Windows. Read the entire document before starting the install.
 
@@ -41,7 +41,7 @@ cd IoT49
 pwd
 ```
 
-This downloads the `IoT49 MicroPython programming environment` to the hard drive of your computer prints out the path where it is installed (e.g. `C:\Users\joe\IoT49`). Take a note of this path, you will need it in step 4 below.
+This downloads the `IoT49 MicroPython programming environment` to the hard drive of your computer and prints the path where it is installed (e.g. `C:\Users\joe\IoT49`). Take a note of this path, you will need it in step 4 below.
 
 **Updates:** If you ever need to update the environment, open a `Git Bash` window and enter the following commands:
 
