@@ -82,7 +82,7 @@ After `Pymakr` is downloaded and installed, the MicroPython command window appea
 
 If all goes well, the ESP32 announces itself by printing the version  (e.g. `IoT49-2017-11-12`) and other details about the installed firmware. 
 
-The `>>>` is the MicroPython prompt. Commands you type here are sent to the ESP32 for execution and the results displayed back here. Try `5-9` or `for i in range(5): print(i**2)`. Have fun exploring!
+The `>>>` is the MicroPython prompt. Commands you type here are sent to the ESP32 for execution and the results displayed back here. Try `5-9` or `for i in range(5): print(i**2)` (you need to hit `Enter` twice). Have fun exploring!
 
 ![Atom IDE Screenshot](atom_screen.png)
 
