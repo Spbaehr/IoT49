@@ -1,6 +1,6 @@
 # Install the uPython Programming Environment on Windows
 
-These instructions have been tested on *Windows 10 Pro* Version 16.07 and may need modifications on other versions of Windows. Read the entire document before starting the install.
+These instructions have been tested on *Windows 10 Pro* Version 16.07. Read the entire document before starting the installation.
 
 ## 1) Install the USB Driver
 

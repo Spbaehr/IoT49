@@ -1,6 +1,6 @@
 # Install the uPython Programming Environment on the Macintosh
 
-These instructions have been tested on *macOS Sierra* Version 10.12.6 and may need modifications on other versions of MacOS. Read the entire document before starting the installation. 
+These instructions have been tested on *macOS Sierra* Version 10.12.6. Read the entire document before starting the installation. 
 
 The installation for Linux is similar with a few changes depending on the version of Linux you are using.
 
