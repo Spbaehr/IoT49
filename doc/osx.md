@@ -76,7 +76,7 @@ You can also erase the entire flash of the microcontroller (if something bad hap
 
 ## 6) Install the Atom IDE
 
-Download and install the [Atom Editor](https://atom.io) from {https://atom.io}(https://atom.io). Once installed, start the editor by clicking on the green icon on the desktop. Choose `File->Settings` and click on `+ Install`. Search for `pymakr`. Scroll down to the package with name `Pymakr` in click the install button.
+Download and install the [Atom Editor](https://atom.io) from [https://atom.io](https://atom.io). Once installed, start the editor by clicking on the green icon on the desktop. Choose `File->Settings` and click on `+ Install`. Search for `pymakr`. Scroll down to the package with name `Pymakr` in click the install button.
 
 From `File` choose `Add Projects Folder...`. Navigate to `/Users/joe/IoT49/esp32` and click `Select Folder`.
 
