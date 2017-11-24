@@ -55,7 +55,7 @@ git submodule update --init --recursive
 
 Click the Windows button and type `env`, then click `Edit environment variables for your account`.
 
-Under `User variables for ...`, select `Path` and click `Edit...`. Click new and enter the path where you copied the EE49 Programming Environment, followed by `\bin`. E.g. `C:\Users\joe\IoT49\bin`. Click `OK`.
+Under `User variables for ...`, select `Path` and click `Edit...`. Click new and enter the path where you copied the IoT49 Programming Environment, followed by `\bin`. E.g. `C:\Users\joe\IoT49\bin`. Click `OK`.
 
 Back to the screen showing `User variables for ...`, select `New` to create the following environment variables (update the values to reflect your setup):
 

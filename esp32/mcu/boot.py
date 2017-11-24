@@ -3,8 +3,6 @@ import micropython, machine, network, time, sys, binascii
 # edit to match your WiFi settings
 known_wifi_nets = {
     # SSID : PSK (passphrase)
-    b"TPA": "TurbenThal",
-    b"EE49": "EE49-only",
     b"EECS-PSK": "Thequickbrown",
 }
 
