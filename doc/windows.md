@@ -59,7 +59,7 @@ Under `User variables for ...`, select `Path` and click `Edit...`. Click new and
 
 Fill in the correct values of your path to the `IoT49 folder` and the COM port in the table below. The value for `PYTHONPATH` is the path to your IoT49 folder with `\bin\lib` appended. Do not use the example values, they are most likely incorrect for your setup. Back to the screen showing `User variables for ...`, select `New` to create the following environment variables:
 
-Variable      | Value                                        | Example 
+Variable      | Value for your setup                         | Example 
 ------------- | ---------------------------------------------|------
 IOT49         | ............................................ | C:\Users\joe\IoT49
 PYTHONPATH    | ............................................ | C:\Users\joe\IoT49\bin\lib

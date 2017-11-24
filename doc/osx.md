@@ -48,7 +48,7 @@ git submodule update --init --recursive
 
 ## 4) Update the Command Search Path and Environment
 
-With a text editor (e.g. TextEdit) open the file `~/.bash_profile` (press `Cmd-Shift-.` to show files with names that start with a period) and add the following lines at the bottom of the file (change `joe` to the correct `joe`):
+With a text editor (e.g. TextEdit) open the file `~/.bash_profile` (press `Cmd-Shift-.` to show files with names that start with a period) and add the following lines at the bottom of the file (replace `joe` with the correct `joe`):
 
 ```
 export PATH='/Users/joe/IoT49/bin:$PATH'
@@ -80,7 +80,12 @@ Download and install the [Atom Editor](https://atom.io) from [https://atom.io](h
 
 From `File` choose `Add Projects Folder...`. Navigate to `/Users/joe/IoT49/esp32` and click `Select Folder`.
 
-After `Pymakr` is downloaded and installed, the MicroPython command window appears near the bottom of the Atom IDE. Click `Settings->Project Settings` and edit the value of the field `"address"` to match the USB port the ESP32 is connected to (e.g. `/dev/cu.SLAB_USBtoUART`). Click `Connect`. 
+After `Pymakr` is downloaded and installed, the MicroPython command window appears near the bottom of the Atom IDE. Click `Settings->Project Settings` and edit the value of the field `"address"` to match the USB port the ESP32 is connected to, e.g.
+
+```
+"address": "/dev/cu.SLAB_USBtoUART",
+```
+if the USB port you determined in step 1 above is `/dev/cu.SLAB_USBtoUART`. Click `Connect`. 
 
 If all goes well, the ESP32 announces itself by printing the version  (e.g. `IoT49-2017-11-12`) and other details about the installed firmware. 
 
