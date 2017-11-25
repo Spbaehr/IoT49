@@ -1,7 +1,6 @@
 import sys
 sys.path.append('/Users/boser/Dropbox/Files/Class/49/code/python/lib')
 
-from mqttplotter import MQTTPlotter
 from mqttclient import MQTTClient
 from collections import OrderedDict
 from matplotlib import rc
@@ -21,9 +20,12 @@ import json, pickle, os
 #     print("MQTT client started ... waiting for data!")
 #     mqtt.loop_forever()   # blocking; see MQTTClient for non-blocking alternatives
 
+import os
+
 class PlotServer:
 
     def __init__(self, mqtt, qos=0):
+        os.chdir(os.getenv('IoT49', '.'))
         self.series_ = {}
         mqtt.subscribe("new_series", self.new_series_, qos)
         mqtt.subscribe("data", self.data_, qos)

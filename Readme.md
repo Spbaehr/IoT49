@@ -42,3 +42,4 @@ Host-side python tools.
 * mac.py: inquires and prints the mac address of the ESP32
 * run.py: executes the Python code of the file argument. E.g. `run.py hello.py` uploads `hello.py` to the ESP32 RAM, executes the code, and sends the results back to the host
 * [plotserver.py](): runs a server on the host computer that accepts and executes plotting commands issued on the ESP32
+* [rpc_receiver.py](); dispatches calls from a remote to objects on the server. E.g. control test instruments from ESP32 (see example []())

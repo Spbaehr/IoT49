@@ -4,8 +4,8 @@ import socket
 # https://github.com/python-ivi
 # https://github.com/python-ivi/python-ivi/blob/master/README.md
 
-dns = "dp832a.home"
-ip  = "192.168.10.137"    # actually used
+dns = "dp832a.home"   # actually used below
+ip  = "192.168.10.137"
 mac = "00:19:AF:5B:77:26"
 
 # helper to make result from config easier to use

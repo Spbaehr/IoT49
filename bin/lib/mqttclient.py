@@ -2,7 +2,7 @@ import paho.mqtt.client as paho
 
 class MQTTClient:
 
-    def __init__(self, broker="habiandev.local", port=1883):
+    def __init__(self, broker, port=1883):
         mqtt = paho.Client()
         mqtt.connect(broker, 1883)
         mqtt.reconnect_delay_set(min_delay=1, max_delay=120)
