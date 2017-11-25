@@ -33,7 +33,7 @@ ESP32 MicroPython code and libraries. The folder `mcu` contains the files that g
 
 ### bin
 
-Host-side python tools.
+Host-side python tools
 
 * [esptool.py](https://github.com/espressif/esptool): low level ESP32 programming tool
 * erase_flash.py: erases the flash of an ESP32 connected by USB
@@ -41,6 +41,6 @@ Host-side python tools.
 * sync.py: uploads the contents of the local esp32/mcu folder to the ESP32 flash memory. Based on [rshell](https://github.com/dhylands/rshell).
 * mac.py: inquires and prints the mac address of the ESP32
 * run.py: executes the Python code of the file argument. E.g. `run.py hello.py` uploads `hello.py` to the ESP32 RAM, executes the code, and sends the results back to the host
-* [start_plotserver.py](): runs a server on the host computer that accepts and executes plotting commands issued on the ESP32 (example: [bin/examples/mqtt_plotter_example.py](bin/examples/mqtt_plotter_example.py))
-* [rpc_receiver.py](): dispatches calls from a remote to objects on the server. E.g. control test instruments from ESP32 (example: [bin/examples/rpc_example.py](bin/examples/rpc_example.py))
+* [start_plotserver.py](bin/start_plotserver.py): runs a server on the host computer that accepts and executes plotting commands issued on the ESP32 (example: [bin/examples/mqtt_plotter_example.py](bin/examples/mqtt_plotter_example.py))
+* [rpc_receiver.py](bin/rpc_receiver.py): dispatches calls from a remote to objects on the server. E.g. control test instruments from ESP32 (example: [bin/examples/rpc_example.py](bin/examples/rpc_example.py))
 * LXI Control of [Rigol DP832A power supply](bin/examples/dp832a_example.py), [Keysight DSOX2024A oscilloscope](bin/examples/dsox2024a_example.py), [Keysight DMM34461A multimeter](bin/examples/dmm34461a_example.py)
