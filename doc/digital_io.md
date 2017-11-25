@@ -66,7 +66,39 @@ The values of the pull-down and pull-up resistors vary from chip-to-chip and pin
 
 ## PWM
 
-Pins can be configured as outputs to automatically change 
+Pins can be configured to output a square wave without further CPU intervention.
+
+
+Example: 
+
+```python
+from machine import PWM, Pin
+from board import *
+import time
+
+# declare pins
+pin1 = Pin(A18, mode=Pin.OUT)
+pin2 = Pin(A19, mode=Pin.OUT)
+
+# initialize PWM
+pwm1 = PWM(pin1, freq=1000)
+pwm2 = PWM(pin2, freq=1000)
+
+# set duty cycle (0 ... 1023)
+pwm1.duty(300)
+pwm2.duty(700)
+
+# go about other business (or just take a nap)
+time.sleep(10000)
+
+# release PWM circuitry for later reuse
+pwm1.deinit()
+pwm2.deinit()
+```
+
+Oscilloscope screen shot:
+
+![PWM Screen shot](pwm.png)
 
 ## Interrupts
 
@@ -84,7 +116,7 @@ p.irq(handler, trigger=< Pin.IRQ_FALLING | Pin.IRQ_RISING >)
 
 ```python
 def irq_handler(pin):
-	pass
+    pass
 ```
 
 Code in interrupt handlers must be short and not allocate memory (e.g. no floating point arithmetic, print statements, or manipulating lists). If any of these features are required or for longer computations, use the `schedule` function. Example:
