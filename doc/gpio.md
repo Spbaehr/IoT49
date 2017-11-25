@@ -1,6 +1,6 @@
 # GPIO
 
-![ESP32 Huzzah32 Pin Names and Functions](huzzah32_pins.pdf)
+![ESP32 Huzzah32 Pin Names and Functions](huzzah32_pins.png)
 
 ## 1) Install the USB Driver
 
