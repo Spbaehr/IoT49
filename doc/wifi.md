@@ -22,3 +22,5 @@ Then click `Settings->Project Settings` in the toolbar above the REPL window and
 ![Setting the WiFi address](wifi.png)
 
 Click `File->Save` and Reconnect. The ESP32 is now connected over WiFi. You can verify this by disconnecting from the computer and instead powering the board from a LiPo battery.
+
+After establishing the wireless connection, `boot.py` instructs the ESP32 to fetch the current time from the internet. If only my kitchen range was this clever ...
