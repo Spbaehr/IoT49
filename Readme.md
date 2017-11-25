@@ -10,6 +10,9 @@ Firmware and [ESP32](https://esp32.com) [MicroPython Programming](http://www.mic
 ## Documentation
 
 * [GPIO (General Purpose Input/Output)](doc/gpio.md)
+   * [Huzzah32 pin diagram](doc/huzzah32_pins.png)
+   * [Digital](doc/digital_io.md)
+   * [Analog](doc/analog_io.md)
 
 ## Files
 
