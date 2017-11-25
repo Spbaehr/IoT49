@@ -12,5 +12,5 @@ try:
     mqtt.loop_forever()
 except KeyboardInterrupt:
     pass
-httpd.server_close()
-print('Stopping httpd...\n')
+mqtt.disconnect()
+print('Stopping MQTT client...\n')
