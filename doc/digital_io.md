@@ -1,6 +1,11 @@
 # Digital GPIO
 
-## Output
+* [Output](#output)
+* [Input](#input)
+* PWM
+* Interrupts
+
+## <a name="output">Output</a>
 
 All pins named A0 ... A21 **except `A2, A3, A4`** can be used for digital output.
 
@@ -34,7 +39,7 @@ p(1)   # pin open (not driven)
 ```
 `id` is the name of the pin, e.g. `A0`.
 
-## Input
+## <a name="input">Input</a>
 All pins named A0 ... A21 can be configured for digital input.
 
 ```python
@@ -67,7 +72,6 @@ The values of the pull-down and pull-up resistors vary from chip-to-chip and pin
 ## PWM
 
 Pins can be configured to output a square wave without further CPU intervention.
-
 
 Example: 
 
