@@ -7,7 +7,11 @@ Firmware and [ESP32](https://esp32.com) [MicroPython Programming](http://www.mic
 * [OSX (and Linux)](doc/osx.md)
 * [Windows](doc/windows.md)
 
-## Contents
+## Documentation
+
+* [GPIO (General Purpose Input/Output)](doc/gpio.md)
+
+## Files
 
 ### LICENSE
 All contents herein are licensed under the [MIT license](LICENSE).
