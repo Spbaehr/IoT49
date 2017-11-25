@@ -9,6 +9,9 @@ Firmware and [ESP32](https://esp32.com) [MicroPython Programming](http://www.mic
 
 ## Documentation
 
+* Programming the ESP32
+   * [Atom IDE](doc/atom_ide.md)
+   * [Wireless Connection](doc/wifi.md)
 * [GPIO (General Purpose Input/Output)](doc/gpio.md)
    * [Huzzah32 pin diagram](doc/huzzah32_pins.png)
    * [Digital](doc/digital_io.md)
