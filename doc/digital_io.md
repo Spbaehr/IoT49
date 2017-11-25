@@ -74,7 +74,7 @@ The values of the pull-down and pull-up resistors vary from chip-to-chip and pin
 
 Pins can be configured to output a square wave without further CPU intervention.
 
-Example: 
+[Example](../esp32/examples/pwm.py):
 
 ```python
 from machine import PWM, Pin
@@ -124,7 +124,7 @@ def irq_handler(pin):
     pass
 ```
 
-Code in interrupt handlers must be short and not allocate memory (e.g. no floating point arithmetic, print statements, or manipulating lists). If any of these features are required or for longer computations, use the `schedule` function. Example:
+Code in interrupt handlers must be short and not allocate memory (e.g. no floating point arithmetic, print statements, or manipulating lists). If any of these features are required or for longer computations, use the `schedule` function. [Example](../esp32/examples/interrupt.py):
 
 ```python
 from machine import Pin
