@@ -8,7 +8,7 @@
 
 ![ADC INL for 0 dB attenuation](adc/esp32_adc_inl_0dB.png)
 
-![ADC INL for 2.5 dB attenuation](adc/esp32_adc_inl_2_5dB.png)
+![ADC INL for 2.5 dB attenuation](adc/esp32_adc_inl_2.5dB.png)
 
 ![ADC INL for 6 dB attenuation](adc/esp32_adc_inl_6dB.png)
 
