@@ -16,9 +16,6 @@ Firmware and [ESP32](https://esp32.com) [MicroPython Programming](http://www.mic
 
 ## Files
 
-### LICENSE
-All contents herein are licensed under the [MIT license](LICENSE).
-
 ### Firmware
 Contains the micropython interpreter and libraries compiled for the ESP-32.
 
@@ -31,12 +28,13 @@ ESP32 MicroPython code and libraries. The folder `mcu` contains the files that g
 
 * [boot.py](esp32/mcu/boot.py) (initializations and connect to wifi)
 * [main.py](esp32/mcu/main.py) (stub only, replace this with your own code)
-* lib:
+* [lib](esp32/lib):
 	* [board](esp32/mcu/lib/board.py): declarations of GPIO pin names
 	* [ina219](https://github.com/chrisb2/pyb_ina219): high side current sensor
 	* [mpu9x50](https://github.com/micropython-IMU/micropython-mpu9x50): 9 DOF IMU
-	* [mqtt](https://github.com/micropython/micropython-lib/blob/master/umqtt.simple/umqtt/simple.py): MQTT client library
-	* [mqtt_plotter](): MQTT remote plotting library
+	* [mqttclient](https://github.com/micropython/micropython-lib/blob/master/umqtt.simple/umqtt/simple.py): MQTT client library
+	* [mqttplotter](esp32/mcu/lib/mqttplotter.py): MQTT remote plotting library ([example](esp32/examples/mqtt_plotter.py))
+* [examples](esp32/examples)
 
 ### bin
 
