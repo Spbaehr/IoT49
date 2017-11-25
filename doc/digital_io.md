@@ -2,8 +2,8 @@
 
 * [Output](#output)
 * [Input](#input)
-* PWM
-* Interrupts
+* [PWM](#pwm)
+* [Interrupts](#interrupts)
 
 ## <a name="output">Output</a>
 
@@ -69,7 +69,8 @@ configures pin `A21` as an input and connectes a pull-up resistor between the in
 
 The values of the pull-down and pull-up resistors vary from chip-to-chip and pin-to-pin and are tpically 30 ... 80 kOhm (pull-up) and ~17 kOhm (pull-down).
 
-## PWM
+## <a name="pwm">PWM</a>
+
 
 Pins can be configured to output a square wave without further CPU intervention.
 
@@ -104,7 +105,7 @@ Oscilloscope screen shot:
 
 ![PWM Screen shot](pwm.png)
 
-## Interrupts
+## <a name="interrupts">Interrupts</a>
 
 Digital inputs can be configured to call a Python function whenever the value changes.
 
