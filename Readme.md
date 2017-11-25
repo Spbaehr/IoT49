@@ -41,5 +41,6 @@ Host-side python tools.
 * sync.py: uploads the contents of the local esp32/mcu folder to the ESP32 flash memory. Based on [rshell](https://github.com/dhylands/rshell).
 * mac.py: inquires and prints the mac address of the ESP32
 * run.py: executes the Python code of the file argument. E.g. `run.py hello.py` uploads `hello.py` to the ESP32 RAM, executes the code, and sends the results back to the host
-* [plotserver.py](): runs a server on the host computer that accepts and executes plotting commands issued on the ESP32
-* [rpc_receiver.py](); dispatches calls from a remote to objects on the server. E.g. control test instruments from ESP32 (see example []())
+* [start_plotserver.py](bin/examples/mqtt_plotter_example.py): runs a server on the host computer that accepts and executes plotting commands issued on the ESP32
+* [rpc_receiver.py](bin/examples/rpc_example.py): dispatches calls from a remote to objects on the server. E.g. control test instruments from ESP32
+* LXI Control of [Rigol DP832A power supply](bin/examples/dp832a_example.py), [Keysight DSOX2024A oscilloscope](bin/examples/dsox2024a_example.py), [Keysight DMM34461A multimeter](bin/examples/dmm34461a_example.py)
