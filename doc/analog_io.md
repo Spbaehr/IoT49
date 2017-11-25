@@ -1,6 +1,10 @@
 # Analog GPIO
 
+## Digital-to-Analog Converter (DAC)
+
 ![DAC output voltage versus input code (0 ... 255)](adc/esp32_dac.png)
+
+## Analog-to-Digital Converter (ADC)
 
 ![ADC output code versus input voltage](adc/esp32_adc_vin.png)
 
