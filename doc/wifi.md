@@ -11,6 +11,19 @@ The file `mcu/boot.py` is executed every time the ESP32 boots and contains the c
 
 Do not forget to run `sync.py` to upload the edited `boot.py` to the ESP32!
 
+## Firewall
+
+Some WiFi setups or host computers use a firewall which may have to be configured. We will be using the following ports:
+
+    | Service | Port number
+    +---------+------------
+    | telnet  | 23
+    | ftp     | 21
+    | mqtt    | 1883, 8883
+    | http    | 80, 443
+    
+If the ESP32 is not able to connect (e.g. to the MQTT boker), or the host cannot connect to the ESP32 (e.g. the Atom console), it may be a firewall issue. Please contact the network administrator for assistance.
+
 ## Programming the ESP32 over WiFi
 
 Once the credentials are entered in `boot.py` and wireless service has started, you can configure the Atom IDE to wirelessly program the ESP32. This is very convenient if the microcontroller is in a difficult to reach location e.g. on a moving robot or buried inside a machine.

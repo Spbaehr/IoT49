@@ -72,38 +72,59 @@ The values of the pull-down and pull-up resistors vary from chip-to-chip and pin
 ## <a name="pwm">PWM</a>
 
 
-Pins can be configured to output a square wave without further CPU intervention.
+Pins can be configured to output a square wave without further CPU intervention. Four independent timers are available, each capable of running at a different frequency. Pins can share a timer to produce equal output frequencies (but possibly different duty cycles).
 
 [Example](../esp32/examples/pwm.py):
 
 ```python
 from machine import PWM, Pin
 from board import *
-import time
+from time import sleep
 
 # declare pins
 pin1 = Pin(A18, mode=Pin.OUT)
 pin2 = Pin(A19, mode=Pin.OUT)
+pin3 = Pin(A20, mode=Pin.OUT)
 
 # initialize PWM
-pwm1 = PWM(pin1, freq=1000)
-pwm2 = PWM(pin2, freq=1000)
+pwm1 = PWM(pin1, timer=0)
+pwm2 = PWM(pin2, timer=0)
+pwm3 = PWM(pin3, timer=1)
+
+# set frequency
+# Note pwm1.freq() == pwm2.freq() since they use the same timer
+pwm1.freq(1000)
+pwm3.freq(3000)
 
 # set duty cycle (0 ... 1023)
-pwm1.duty(300)
-pwm2.duty(700)
+pwm1.duty(700)
+pwm2.duty(300)
+pwm3.duty(500)
+
+print("pwm1:", pwm1)
+print("pwm2:", pwm2)
+print("pwm3:", pwm3)
 
 # go about other business (or just take a nap)
-time.sleep(10000)
 
+sleep(100)
 # release PWM circuitry for later reuse
 pwm1.deinit()
 pwm2.deinit()
+pwm3.deinit()
+
 ```
 
 Oscilloscope screen shot:
 
 ![PWM Screen shot](pwm.png)
+
+The duty cycle, 0 ... 1023, is the number of cycles (of 1024 total in the period) during which the output stays high. Note that with duty=1023 the output is low for one cycle.
+
+Example: same code as above with duty set to 1022, 1024, and 0. 
+
+![PWM Screen shot](pwm_duty.png)
+
 
 ## <a name="interrupts">Interrupts</a>
 
