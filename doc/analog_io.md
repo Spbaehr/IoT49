@@ -6,7 +6,7 @@
 
 The DAC reference voltage equals the supply, V<sub>DD</sub> (nominally 3.3V). The code below sets the DAC1 output voltage V<sub>out</sub> to 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<sub>out</sub> = code*V<sub>DD</sub>/255
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<sub>out</sub> = (code/255) * V<sub>DD</sub>
 
 ```python
 from board import DAC1
@@ -27,7 +27,7 @@ The ESP-32 contains two 12-Bit ADCs (nominal, the actual performance is much low
 
 The ADC output code for input V<sub>in</sub> equals
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code = V<sub>in</sub>/V<sub>ref</sub> * 4095
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code = 4095 * (V<sub>in</sub>/V<sub>ref</sub>)
 
 The `attn(arg)` function sets the reference V<sub>ref</sub> (see example below). Valid arguments and the corresponding approximate values of V<sub>ref</sub> are:
 
