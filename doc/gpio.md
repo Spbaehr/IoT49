@@ -5,7 +5,7 @@
 | The maximum voltage on any pin of the ESP32 is **3.3V**. |
 | The maximum current in or out of any GPIO pin is **10mA**. |
 
-The figure below shows the pin naming of the MicroPython port for the Huzzah32. Module `board` declares all pin names. Many pins have aliases. For example, pin `A12` is also called `LED`, reflecting the fact that it is tied to the on-board LED. Some pins have alternate functions, e.g. `SCL` and `SDA` can be used either or gneral purpose digital I/O or for I2C communication with attached sensors.
+The figure below shows the pin naming of the MicroPython port for the Huzzah32. Module `board` declares all pin names. Many pins have aliases. For example, pin `A12` is also called `LED`, reflecting the fact that it is tied to the on-board LED. Some pins have alternate functions, e.g. `SCL` and `SDA` can be used either or general purpose digital I/O or for I2C communication with attached sensors.
 
 E.g. the following code turns on red LED on the Huzzah32 board:
 

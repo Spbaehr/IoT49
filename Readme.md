@@ -23,7 +23,8 @@ Firmware and [ESP32](https://esp32.com) [MicroPython Programming](http://www.mic
 Contains the micropython interpreter and libraries compiled for the ESP-32.
 
 * [Micropython](http://www.micropython.org)
-* [Firmware Source Code and Documentation](https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo)
+* [Differences from standard MicroPython](doc/differences.md)
+* [Firmware Source Code and Documentation](https://github.com/bboser/MicroPython_ESP32_psRAM_LoBo)
 
 ### esp32
 
