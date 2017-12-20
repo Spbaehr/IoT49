@@ -6,7 +6,7 @@
 
 The DAC reference voltage equals the supply, V<sub>DD</sub> (nominally 3.3V). The code below sets the DAC1 output voltage V<sub>out</sub> to 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = code*V<sub>DD</sub>/255
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<sub>out</sub> = code*V<sub>DD</sub>/255
 
 ```python
 from board import DAC1
