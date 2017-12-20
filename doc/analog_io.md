@@ -64,3 +64,5 @@ code = adc0.read()
 ![ADC INL for 6 dB attenuation](adc/esp32_adc_inl_6dB.png)
 
 ![ADC INL for 11 dB attenuation](adc/esp32_adc_inl_11dB.png)
+
+ADC noise (with constant input) is approximately &plusmn; 25 LSB.
