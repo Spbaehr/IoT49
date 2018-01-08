@@ -4,50 +4,20 @@ Firmware and [ESP32](https://esp32.com) [MicroPython Programming](http://www.mic
 
 ## Installation
 
-* [OSX (and Linux)](doc/osx.md)
-* [Windows](doc/windows.md)
+* [Instructions](doc/install.md)
+* [Atom IDE (optional)](doc/atom_ide.md)
 
+[//]: # (* [Wireless Connection](doc/wifi.md))
+  
 ## Documentation
 
-* Programming the ESP32
-   * [Atom IDE](doc/atom_ide.md)
-   * [Wireless Connection](doc/wifi.md)
 * [GPIO (General Purpose Input/Output)](doc/gpio.md)
-   * [Huzzah32 pin diagram](doc/huzzah32_pins.png)
+   * [HUZZAH32 pin diagram](doc/huzzah32_pins.png)
    * [Digital](doc/digital_io.md)
    * [Analog](doc/analog_io.md)
 
-## Files
+* IOT49 Firmware for HUZZAH32
+   * [Micropython](http://www.micropython.org)
+   * [Differences from standard MicroPython](doc/differences.md)
+   * [Source Code](https://github.com/bboser/MicroPython_ESP32_psRAM_LoBo)
 
-### Firmware
-Contains the micropython interpreter and libraries compiled for the ESP-32.
-
-* [Micropython](http://www.micropython.org)
-* [Differences from standard MicroPython](doc/differences.md)
-* [Firmware Source Code and Documentation](https://github.com/bboser/MicroPython_ESP32_psRAM_LoBo)
-
-### esp32
-
-ESP32 MicroPython code and libraries. The folder `mcu` contains the files that get actually uploaded to the controller and include:
-
-* [boot.py](esp32/mcu/boot.py) (initializations and connect to wifi)
-* [main.py](esp32/mcu/main.py) (stub only, replace this with your own code)
-* [lib](esp32/lib):
-	* [board](esp32/mcu/lib/board.py): declarations of GPIO pin names
-	* [ina219](https://github.com/chrisb2/pyb_ina219): high side current sensor
-	* [mpu9x50](https://github.com/micropython-IMU/micropython-mpu9x50): 9 DOF IMU
-	* [mqttclient](https://github.com/micropython/micropython-lib/blob/master/umqtt.simple/umqtt/simple.py): MQTT client library
-	* [mqttplotter](esp32/mcu/lib/mqttplotter.py): MQTT remote plotting library ([example](esp32/examples/mqtt_plotter.py))
-* [examples](esp32/examples)
-
-### bin
-
-Host-side python tools.
-
-* [esptool.py](https://github.com/espressif/esptool): low level ESP32 programming tool
-* erase_flash.py: erases the flash of an ESP32 connected by USB
-* flash.py: uploads the MicroPython firmware to the ESP32 connected by USB
-* sync.py: uploads the contents of the local esp32/mcu folder to the ESP32 flash memory. Based on [rshell](https://github.com/dhylands/rshell).
-* [start_plotserver.py](bin/start_plotserver.py): runs a server on the host computer that accepts and executes plotting commands issued on the ESP32 (example: [bin/examples/mqtt_plotter_example.py](bin/examples/mqtt_plotter_example.py))
-* [rpc_receiver.py](bin/rpc_receiver.py): dispatches calls from a remote computer to objects on the server. E.g. control test instruments from ESP32 (example: [bin/examples/rpc_example.py](bin/examples/rpc_example.py))
-* LXI Control of [Rigol DP832A power supply](bin/examples/dp832a_example.py), [Keysight DSOX2024A oscilloscope](bin/examples/dsox2024a_example.py), [Keysight DMM34461A multimeter](bin/examples/dmm34461a_example.py)

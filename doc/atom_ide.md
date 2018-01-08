@@ -26,10 +26,3 @@ Make sure the editor window with the code you just typed is selected (you may ne
 
 ![Atom IDE](run.png)
 
-## Uploading Library Files
-
-The command `sync.py` typed in a termial window or at the Window command prompt uploads the contents of the `mcu` folder to the `/flash` folder on the ESP32. 
-
-`mcu` contains initialization code `boot.py` executed each time the ESP32 resets, the application `main.py` (invoked after `boot.py` finishes; the default is just a stub that does nothing), the and the user library `lib`, and any other content you may wish the upload (e.g. html pages for a webserver). Be mindful that the ESP32 flash memory available for user files is only ~500 kBytes.
-
-Exit the `Atom IDE` and run `sync.py` whenever you make changes to the `mcu` folder. Currently the ESP32 must be connected via its USB port for `sync.py` to work. Reset the ESP32 after uploading code to clear stale content.
