@@ -4,13 +4,15 @@
 
 ![Atom IDE](atom_ide.png)
 
-The figure shows the Atom IDE with the project file browser at the left (menu `File->Project Folder...` and navigate to the `IoT49/esp32` folder if it is not open), the editing pane at the top right, and the ESP32 REPL console at the bottom right.
+Create a folder where you want to keep the programs for the ESP32. Then start the Atom editor, choose `File->Project Folder...` and navigate to the folder you just created. The figure above shows the IDE with the project file browser at the left with a few program files already created, the editing pane at the top right, and the ESP32 REPL console at the bottom right.
 
 ## REPL
 
 Commands typed into the REPL console are sent the the ESP32 for execution and results returned to the console for display.
 
-Click `Connect` or `Reconnect` if the REPL prompt (`>>>`) is not displayed. Sometimes it is necessary to press the reset button on the ESP32 and wait ~10 seconds before a connection can be made.
+Click `Settings->Project Settings` and change the value of the `"address"` field the name of the USB port on your computer.
+
+Click `Connect` or `Reconnect` if the REPL prompt (`>>>`) is not displayed. Sometimes it is necessary to press the reset button on the ESP32 and wait a few seconds before a connection is made.
 
 ## Editor & Running Code
 
