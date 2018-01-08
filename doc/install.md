@@ -18,7 +18,7 @@ Open a terminal window (search `Terminal` from the command bar and click on the 
 
 ### Windows
 
-To find out what the USB (also called COM-port on Windows) is, open the Windows `Device Manager`. Click the Windows button (typically in the lower left of the corner of the screen) and type `device` in the search box. Click `Device Manager`. Connect the ESP32 microcontroller to a free USB port. Then open the tab `Ports (COM & LPT)` in the device manager. Look for the line starting with `Silicon Labs CP210x`. The port you are looking for is listed in parantheses at the end of the line, e.g. `COM3`. Take note of this value, you will need it in this guide and later to program the microcontroller. 
+To find out what the USB (also called COM-port on Windows) is, open the Windows `Device Manager`. Click the Windows button (typically in the lower left of the corner of the screen) and type `device` in the search box. Click `Device Manager`. Connect the ESP32 microcontroller to a free USB port. Then open the tab `Ports (COM & LPT)` in the device manager. Look for the line starting with `Silicon Labs CP210x`. The port you are looking for is listed in parantheses at the end of the line, e.g. `COM3`. Take note of this value, you will need it to program the microcontroller. 
 
 Be sure to always connect the ESP32 to the same physical USB port as the port number may be different for other connectors. The port number can also change when other devices are plugged into different USB ports. If in doubt or in case of problems you can always repeat the steps outlined above to check if the USB port has changed.
 
