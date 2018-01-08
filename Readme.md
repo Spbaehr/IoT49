@@ -1,14 +1,13 @@
-# IoT49 Micropython Programming Environment 
+# IoT49 Micropython Programming Setup 
 
-Firmware and [ESP32](https://esp32.com) [MicroPython Programming](http://www.micropython.org) Environment for [UC Berkeley](http://www.berkeley.edu) EE49. See [https://github.com/bboser/IoT49](https://github.com/bboser/IoT49) for updates.
+[ESP32](https://esp32.com) [MicroPython](http://www.micropython.org) programming setup for UC Berkeley course [EE49](https://people.eecs.berkeley.edu/~boser/courses/49/overview.html), Electronics for IoT. 
 
 ## Installation
 
 * [Instructions](doc/install.md)
 * [Atom IDE (optional)](doc/atom_ide.md)
 
-[//]: # (* [Wireless Connection](doc/wifi.md))
-  
+
 ## Documentation
 
 * [GPIO (General Purpose Input/Output)](doc/gpio.md)
