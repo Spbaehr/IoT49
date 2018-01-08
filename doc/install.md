@@ -41,15 +41,15 @@ If you get something similar to
 Python 3.6.3 :: Anaconda custom (x86_64)
 ```
 
-Python is already installed. The number after the word `Python` is the version. Verify that it is `3.4` or later. If not, you need to install a newer version. In particular OSX and many versions of Linux come with Python 2.7 preinstalled. 
+Python is already installed. The number after the word `Python` is the version. Verify that it is `3.4` or later. If not, you need to install a newer version. OSX and many versions of Linux come with Python 2.7 preinstalled. Follow the instructions below to install a newer version. 
 
-Fortunately it is possible to install multiple versions of Python without them interacting. Download and install [Python 3.6](https://conda.io/miniconda.html) from [https://conda.io/miniconda.html](https://conda.io/miniconda.html). Other Python 3 distributions should work as well.
+Fortunately it is possible to install multiple versions of Python without them interacting. Download and install [Python 3.6 or later](https://conda.io/miniconda.html) from [https://conda.io/miniconda.html](https://conda.io/miniconda.html). Other Python 3 distributions should work as well.
 
-Open a terminal window and type `python` at the prompt. Verify that Python announces itself with the correct version (3.6). Type `exit()` to quit the Python interpreter.
+Open a terminal window and type `python` at the prompt. Verify that Python announces itself with the correct version (3.6 or later). Type `exit()` to quit the Python interpreter.
 
 ## 3) Install `shell49`
 
-Navigate to [https://github.com/bboser/shell49]() and follow the instructions to install `shell49`.
+Navigate to [https://github.com/bboser/shell49](https://github.com/bboser/shell49) and follow the instructions to install `shell49`.
 
 ## 4) Flash the MicroPython Firmware to the ESP32
 
@@ -82,15 +82,27 @@ and try a few Python commands, e.g.
 2**100
 for i in range(4):
     print(i, i**2)
+from machine import Pin
+from board import LED
+led = Pin(LED, mode=Pin.OUT)
+led(1)
 ```
 
-Type `Ctrl-X` followed by `Ctrl-D` to exit `shell49`.
+See how the microcontroller lights up the world ...
+
+```
+led(0)
+```
+
+to conserve energy.
+
+When you are done experimenting, type `Ctrl-X` followed by `Ctrl-D` to exit `shell49`.
 
 ## 6) Get a Text Editor
 
 To write programs you need a text editor. Any plain text editor works (e.g. `TextEdit` or `Notepad`), but an editor with Python syntax highlighting helps catching errors. 
 
-A [web search](https://wiki.python.org/moin/PythonEditors) brings up many options. If you are already with an editor, use that. 
+A [web search](https://wiki.python.org/moin/PythonEditors) brings up many options to choose from. If you are already familiar with a suitable editor, use it. 
 
 If you prefer an ```Integrated Programming Environment (IDE)``` which  keeps track of your project, you might consider [Atom Editor](https://atom.io). It has a plugin that [talks directly to boards with MicroPython](atom_ide.md). See [https://docs.pycom.io/chapter/pymakr/installation/atom.html]() for more information.
 
