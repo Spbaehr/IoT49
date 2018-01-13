@@ -66,12 +66,12 @@ config --default port <port>
 config --default board HUZZAH32
 config --default time_offset 0
 flash
+```
+
+Check for error messages. If none, press the reset button on the HUZZAH32 board, then type
+
+```
 config -u name <alphanumeric_name>
-```
-
-If you did not get any error messages, your microcontroller is ready for work. Type
-
-```
 repl
 ```
 

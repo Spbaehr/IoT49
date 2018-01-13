@@ -3,6 +3,7 @@
 * [Output](#output)
 * [Input](#input)
 * [PWM](#pwm)
+* [Encoder](#encoder)
 * [Interrupts](#interrupts)
 
 ## <a name="output">Output</a>
@@ -19,7 +20,7 @@ p(0)   # pin driven to 0V
 p(1)   # pin driven to VDD (~ 3.3V)
 
 ```
-`id` is the name of the pin, e.g. 
+`id` is the name of the pin, e.g.
 
 ```python
 from board import A0
@@ -65,16 +66,15 @@ from board import A21
 from machine import Pin
 p = Pin(A21, mode=Pin.IN, pull=Pin.PULL_UP)
 ```
-configures pin `A21` as an input and connectes a pull-up resistor between the input pin and VDD.
+configures pin `A21` as an input and connects a pull-up resistor between the input pin and VDD.
 
 The values of the pull-down and pull-up resistors vary from chip-to-chip and pin-to-pin and are tpically 30 ... 80 kOhm (pull-up) and ~17 kOhm (pull-down).
 
 ## <a name="pwm">PWM</a>
 
+Pins can be configured to output a square wave without further CPU intervention. Four independent timers are available, each capable of running at a different frequency.
 
-Pins can be configured to output a square wave without further CPU intervention. Four independent timers are available, each capable of running at a different frequency. Pins can share a timer to produce equal output frequencies (but possibly different duty cycles).
-
-[Example](../esp32/examples/pwm.py):
+Example:
 
 ```python
 from machine import PWM, Pin
@@ -87,19 +87,10 @@ pin2 = Pin(A19, mode=Pin.OUT)
 pin3 = Pin(A20, mode=Pin.OUT)
 
 # initialize PWM
-pwm1 = PWM(pin1, timer=0)
-pwm2 = PWM(pin2, timer=0)
-pwm3 = PWM(pin3, timer=1)
-
-# set frequency
-# Note pwm1.freq() == pwm2.freq() since they use the same timer
-pwm1.freq(1000)
-pwm3.freq(3000)
-
-# set duty cycle (0 ... 1023)
-pwm1.duty(700)
-pwm2.duty(300)
-pwm3.duty(500)
+# freq is in [Hz], duty in [%]
+pwm1 = PWM(pin1, freq=1000, duty=70)
+pwm2 = PWM(pin2, freq=1000, duty=30)
+pwm3 = PWM(pin3, freq=3000, duty=50)
 
 print("pwm1:", pwm1)
 print("pwm2:", pwm2)
@@ -119,12 +110,109 @@ Oscilloscope screen shot:
 
 ![PWM Screen shot](pwm.png)
 
-The duty cycle, 0 ... 1023, is the number of cycles (of 1024 total in the period) during which the output stays high. Note that with duty=1023 the output is low for one cycle.
+The duty cycle, 0 ... 100%, is the percentage of time of the entire period during which the output stays high.
 
-Example: same code as above with duty set to 1022, 1024, and 0. 
+Note that even with duty=100 the output goes low for a brief period (1/2**15).
 
-![PWM Screen shot](pwm_duty.png)
+## <a name="encoder">Encoder</a>
 
+The ESP32 has 8 pulse 16-Bit count units, either for quadrature or single input encoders.
+
+Quadrature input 4-phase counting (counts *up or down* in raising and falling edges of `p1` and `p2`):
+```python
+from machine import Pin, ENC
+p1 = Pin(id1, mode=Pin.IN, ...)
+p2 = Pin(id2, mode=Pin.IN, ...)
+enc = ENC(<unit>, p1, p2)
+```
+
+Single input counting (counts *up* on raising and falling edge of `p`):
+```python
+from machine import Pin, ENC
+p = Pin(id1, mode=Pin.IN, ...)
+enc = ENC(<unit>, p1)
+```
+
+`<unit>` 0 ...7 is the pulse count unit number.
+
+Available functions:
+```Python
+enc.count()                # returns the current count
+enc.cound_and_clear()      # returns the current count and sets the counter to 0
+enc.clear()                # sets the counter value to 0
+enc.pause()                # pauses counting
+enc.resume()               # resumes counting
+```
+
+**Note:** the counters are signed 16-Bit ints and will roll over.
+
+Example:
+
+```Python
+from board import A18, A19, A20, A21
+from machine import Pin, ENC
+
+"""
+Quadrature Encoder Demo
+
+Pins A18, A20 generate quadrature input, decoded by A19, A20
+
+Connect A18 --> A19
+    and A20 --> A21
+
+Ref: https://github.com/dhylands/upy-examples/blob/master/encoder3.py
+"""
+
+# Encoder
+quadrature = True   # configure for quadrature or single input counting
+
+if quadrature:
+    enc = ENC(0, Pin(A19), Pin(A21))
+else:
+    enc = ENC(0, Pin(A19))
+
+print("Encoder:", enc)
+
+# Quadrature signal generator
+
+q_idx = 0
+q_seq = [0, 1, 3, 2]
+
+qa_out = Pin(A18, mode=Pin.OUT)
+qb_out = Pin(A20, mode=Pin.OUT)
+
+def set_out():
+    va = (q_seq[q_idx] & 0x02) != 0
+    vb = (q_seq[q_idx] & 0x01) != 0
+    qa_out.value(va)
+    qb_out.value(vb)
+    print("{} {}   count ={:4d}".format(
+        'X' if va else ' ',
+        'X' if vb else ' ',
+        enc.count()))
+
+def incr():
+    global q_idx
+    q_idx = (q_idx+1) % 4
+    set_out()
+
+def decr():
+    global q_idx
+    q_idx = (q_idx-1) % 4
+    set_out()
+
+# Demo: counts up and down (quadrature==True) or just up (quadrature==False)
+
+enc.clear()
+print("      count ={:4d}".format(enc.count()))
+
+for i in range(12):
+    incr()
+for i in range(24):
+    decr()
+for i in range(12):
+    incr()
+```
 
 ## <a name="interrupts">Interrupts</a>
 
@@ -145,7 +233,9 @@ def irq_handler(pin):
     pass
 ```
 
-Code in interrupt handlers must be short and not allocate memory (e.g. no floating point arithmetic, print statements, or manipulating lists). If any of these features are required or for longer computations, use the `schedule` function. [Example](../esp32/examples/interrupt.py):
+Code in interrupt handlers must be short and not allocate memory (e.g. no floating point arithmetic, print statements, or manipulating lists). If any of these features are required or for longer computations, use the `schedule` function.
+
+Example:
 
 ```python
 from machine import Pin
@@ -182,6 +272,6 @@ button.irq(button_irq_handler, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING)
 
 # interrupts occur in the background (concurrent with REPL)
 print("Return control to REPL; interrupts continue in background")
-``` 
+```
 
 Consult the MicroPython manual for more information about [writing interrupt handlers](http://docs.micropython.org/en/latest/pyboard/reference/isr_rules.html).

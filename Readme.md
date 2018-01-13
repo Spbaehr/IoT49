@@ -19,4 +19,5 @@
    * [Micropython](http://www.micropython.org)
    * [Differences from standard MicroPython](doc/differences.md)
    * [Source Code](https://github.com/bboser/MicroPython_ESP32_psRAM_LoBo)
+   * Additional software: [MicroPython standard library](https://github.com/micropython/micropython-lib) mimics the Python standard library, as appropriate.
 
