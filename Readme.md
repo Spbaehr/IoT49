@@ -1,6 +1,6 @@
-# IoT49 Micropython Programming Setup 
+# IoT49 Micropython Programming Setup
 
-[ESP32](https://esp32.com) [MicroPython](http://www.micropython.org) programming setup for UC Berkeley course [EE49](https://people.eecs.berkeley.edu/~boser/courses/49/overview.html), Electronics for IoT. 
+[ESP32](https://esp32.com) [MicroPython](http://www.micropython.org) programming setup for UC Berkeley course [EE49](https://people.eecs.berkeley.edu/~boser/courses/49/overview.html), Electronics for IoT.
 
 ## Installation
 
@@ -17,7 +17,7 @@
 
 * IOT49 Firmware for HUZZAH32
    * [Micropython](http://www.micropython.org)
-   * [Differences from standard MicroPython](doc/differences.md)
+   * [Built-In Modules](doc/modules.md)
+   * [MicroPython standard library](https://github.com/micropython/micropython-lib)
    * [Source Code](https://github.com/bboser/MicroPython_ESP32_psRAM_LoBo)
-   * Additional software: [MicroPython standard library](https://github.com/micropython/micropython-lib) mimics the Python standard library, as appropriate.
-
+   * **Bugs:** report problems as issues in the [github repo](https://github.com/bboser/MicroPython_ESP32_psRAM_LoBo). Include the output from `import iot49; iot49.version()` and a concise description of the problem along with code and instructions for preproducing it.
