@@ -59,7 +59,7 @@ Connect the ESP32 to the computer via USB. At the command prompt type
 shell49
 ```
 
-After the greeting the commands below. Replace `<port>` with the USB port determined in step 1 of these instructions, e.g. `/dev/cu.SLAB_USBtoUART` and `<alphanumeric_name>` with a unique name, e.g. `donald_duck` if your name is Donald Duck.
+After the greeting, enter the commands below. Replace `<port>` with the USB port determined in step 1 of these instructions, e.g. `/dev/cu.SLAB_USBtoUART` and `<alphanumeric_name>` with a unique name, e.g. `donald_duck` if your name is Donald Duck.
 
 ```
 config --default port <port>
