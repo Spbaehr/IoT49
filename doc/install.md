@@ -53,7 +53,7 @@ Navigate to [https://github.com/bboser/shell49](https://github.com/bboser/shell4
 
 ## 4) Flash the MicroPython Firmware to the ESP32
 
-Connect the ESP32 to the computer via USB. At the command prompt type
+Make sure the ESP32 is **not connected to the computer**. At the command prompt type
 
 ```
 shell49
@@ -65,17 +65,22 @@ After the greeting, enter the commands below. Replace `<port>` with the USB port
 config --default port <port>
 config --default board HUZZAH32
 config --default time_offset 0
-flash
 ```
 
-Check for error messages. If none, press the reset button on the HUZZAH32 board, then type
+Now connect the ESP32 to the computer with a USB cable. At the `shell49` prompt type
+
+```
+flash -e
+```
+
+This flashes the MicroPython firmware to the ESP32. Check for error messages. If there are none, press the reset button on the HUZZAH32 board, then type
 
 ```
 config -u name <alphanumeric_name>
 repl
 ```
 
-and try a few Python commands, e.g.
+You should be getting a `REPL prompt` from MicroPython running on the ESP32. Try a few Python commands, e.g.
 
 ```
 1+1
