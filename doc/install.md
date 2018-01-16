@@ -8,6 +8,8 @@ Read the entire document before starting the installation.
 
 Download and install the CP210X USB driver from [https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
 
+For windows there are two versions: `x64` is for newer 64-Bit CPUs, while `x86` is for 32-Bit computers. Pick the right one for your computer. Unless it is quite old, that's likely `x64`. All Mac's are 64-Bit.
+
 **Important:** For later steps you will need to know the name of the port of the USB device. To find out what it is, connect the ESP32 microcontroller to a free USB port.
 
 ### OSX/Linux
@@ -18,7 +20,7 @@ Open a terminal window (search `Terminal` from the command bar and click on the 
 
 ### Windows
 
-To find out what the USB (also called COM-port on Windows) is, open the Windows `Device Manager`. Click the Windows button (typically in the lower left of the corner of the screen) and type `device` in the search box. Click `Device Manager`. Connect the ESP32 microcontroller to a free USB port. Then open the tab `Ports (COM & LPT)` in the device manager. Look for the line starting with `Silicon Labs CP210x`. The port you are looking for is listed in parantheses at the end of the line, e.g. `COM3`. Take note of this value, you will need it to program the microcontroller.
+To find out what the USB (also called COM-port on Windows) is, open the Windows `Device Manager`. Click the Windows button (typically in the lower left of the corner of the screen) and type `device` in the search box. Click `Device Manager`. Connect the ESP32 microcontroller to a free USB port. Then open the tab `Ports (COM & LPT)` in the device manager. Look for the line starting with `Silicon Labs CP210x`. The port you are looking for is listed in parentheses at the end of the line, e.g. `COM3`. Take note of this value, you will need it to program the microcontroller.
 
 Be sure to always connect the ESP32 to the same physical USB port as the port number may be different for other connectors. The port number can also change when other devices are plugged into different USB ports. If in doubt or in case of problems you can always repeat the steps outlined above to check if the USB port has changed.
 
@@ -38,12 +40,12 @@ python --version
 If you get something similar to
 
 ```
-Python 3.6.3 :: Anaconda custom (x86_64)
+Python 3.6.3 :: ...
 ```
 
-Python is already installed. The number after the word `Python` is the version. Verify that it is `3.4` or later. If not, you need to install a newer version. OSX and many versions of Linux come with Python 2.7 preinstalled. Follow the instructions below to install a newer version.
+Python is already installed. The number after the word `Python` is the version. Verify that it is `3.4` or later. If not, you need to install a newer version.
 
-Fortunately it is possible to install multiple versions of Python without them interacting. Download and install [Python 3.6 or later](https://conda.io/miniconda.html) from [https://conda.io/miniconda.html](https://conda.io/miniconda.html). Other Python 3 distributions should work as well.
+You can [download Python 3](https://www.python.org/downloads/) from the official Python website. Choose the latest stable version (3.6.4 at the time of this writing).
 
 Open a terminal window and type `python` at the prompt. Verify that Python announces itself with the correct version (3.6 or later). Type `exit()` to quit the Python interpreter.
 
@@ -109,6 +111,10 @@ To write programs you need a text editor. Any plain text editor works (e.g. `Tex
 
 A [web search](https://wiki.python.org/moin/PythonEditors) brings up many options to choose from. If you are already familiar with a suitable editor, use it.
 
-If you prefer an ```Integrated Programming Environment (IDE)``` which  keeps track of your project, you might consider [Atom Editor](https://atom.io). It has a plugin that [talks directly to boards with MicroPython](atom_ide.md). See [https://docs.pycom.io/chapter/pymakr/installation/atom.html]() for installation instructions. `Atom` comes with a wide range of optional plug-ins with useful features. E.g. `linter-pyflakes` points out Python syntax errors in the editor.
+If you prefer an ```Integrated Programming Environment (IDE)``` which  keeps track of your project, you might consider the [Atom Editor](https://atom.io).
+
+`Atom` comes with a wide range of optional plug-ins with useful features. E.g. `linter-pyflakes` points out Python syntax errors in the editor.
+
+The `Pymakr` plugin can be used as an alternative to `shell49` to upload and run code from the editor to the microcontroller. [Installation](https://docs.pycom.io/chapter/pymakr/installation/atom.html) and [usage](atom_ide.md) instructions can be found on the web.
 
 ![Atom IDE Screenshot](atom_cuSLAB.png)
