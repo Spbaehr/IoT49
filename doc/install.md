@@ -78,6 +78,7 @@ flash -e
 This flashes the MicroPython firmware to the ESP32. Check for error messages. If there are none, press the reset button on the HUZZAH32 board, then type:
 
 ```
+connect serial
 config -u name <alphanumeric_name>
 repl
 ```
