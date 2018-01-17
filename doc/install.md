@@ -106,11 +106,13 @@ to conserve energy.
 
 When you are done experimenting, type `Ctrl-X` followed by `Ctrl-D` to exit `shell49`.
 
+From now on, when you start `shell49` it automatically connects to the ESP32 and you can use commands such as `repl`. Flashing is only needed the first time or to update or reinstall MicroPython.
+
 ## 6) Get a Text Editor
 
 To write programs you need a text editor. Any plain text editor works (e.g. `TextEdit` or `Notepad`), but an editor with Python syntax highlighting helps catching errors.
 
-A [web search](https://wiki.python.org/moin/PythonEditors) brings up many options to choose from. If you are already familiar with a suitable editor, use it.
+A [web search](https://wiki.python.org/moin/PythonEditors) lists many options to choose from. If you are already familiar with a suitable editor, use it.
 
 If you prefer an ```Integrated Programming Environment (IDE)``` which  keeps track of your project, you might consider the [Atom Editor](https://atom.io).
 
