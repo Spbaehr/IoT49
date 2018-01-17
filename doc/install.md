@@ -75,7 +75,7 @@ Now connect the ESP32 to the computer with a USB cable. At the `shell49` prompt 
 flash -e
 ```
 
-This flashes the MicroPython firmware to the ESP32. Check for error messages. If there are none, press the reset button on the HUZZAH32 board, then type (replace `<alphanumeric_name>` with the name you want to give your computer - choose something unique like your pets name):
+This flashes the MicroPython firmware to the ESP32. Check for error messages. If there are none, press the reset button on the HUZZAH32 board, then type:
 
 ```
 config -u name <alphanumeric_name>
