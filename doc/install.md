@@ -114,7 +114,7 @@ To write programs you need a text editor. Any plain text editor works (e.g. `Tex
 
 A [web search](https://wiki.python.org/moin/PythonEditors) lists many options to choose from. If you are already familiar with a suitable editor, use it.
 
-If you prefer an ```Integrated Programming Environment (IDE)``` which  keeps track of your project, you might consider the [Atom Editor](https://atom.io).
+If you prefer an ```Integrated Programming Environment (IDE)``` which  keeps track of your project, you might consider the [Atom Editor](https://atom.io), among many other choices.
 
 `Atom` comes with a wide range of optional plug-ins with useful features. E.g. `linter-pyflakes` shows Python syntax errors as you type.
 
