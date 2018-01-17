@@ -113,7 +113,7 @@ A [web search](https://wiki.python.org/moin/PythonEditors) brings up many option
 
 If you prefer an ```Integrated Programming Environment (IDE)``` which  keeps track of your project, you might consider the [Atom Editor](https://atom.io).
 
-`Atom` comes with a wide range of optional plug-ins with useful features. E.g. `linter-pyflakes` points out Python syntax errors in the editor.
+`Atom` comes with a wide range of optional plug-ins with useful features. E.g. `linter-pyflakes` points out Python syntax errors.
 
 The `Pymakr` plugin can be used as an alternative to `shell49` to upload and run code from the editor to the microcontroller. [Installation](https://docs.pycom.io/chapter/pymakr/installation/atom.html) and [usage](atom_ide.md) instructions can be found on the web.
 
