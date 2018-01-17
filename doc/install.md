@@ -45,9 +45,11 @@ Python 3.6.3 :: ...
 
 Python is already installed. The number after the word `Python` is the version. Verify that it is `3.4` or later. If not, you need to install a newer version.
 
-You can [download Python 3](https://www.python.org/downloads/) from the official Python website. Other installers (e.g. `homebrew` on the Mac or `anaconda`) work as well.
+You can [download Python 3](https://www.python.org/downloads/) from the official Python website. If present, make sure to check the box `Add Python to PATH` near the [bottom of the installer window](https://docs.python.org/3/using/windows.html).
 
-Open a terminal window and type `python` at the prompt. Verify that Python announces itself with the correct version (3.6 or later). Type `exit()` to quit the Python interpreter.
+Other installers (e.g. `homebrew` on the Mac or `anaconda`) work as well.
+
+After completing the installation, open a terminal window and type `python` at the prompt. Verify that Python announces itself with the correct version (3.6 or later). Type `exit()` to quit the Python interpreter.
 
 ## 3) Install `shell49`
 
