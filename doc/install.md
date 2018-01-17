@@ -45,7 +45,7 @@ Python 3.6.3 :: ...
 
 Python is already installed. The number after the word `Python` is the version. Verify that it is `3.4` or later. If not, you need to install a newer version.
 
-You can [download Python 3](https://www.python.org/downloads/) from the official Python website. Choose the latest stable version (3.6.4 at the time of this writing).
+You can [download Python 3](https://www.python.org/downloads/) from the official Python website. Other installers (e.g. `homebrew` on the Mac or `anaconda`) work as well.
 
 Open a terminal window and type `python` at the prompt. Verify that Python announces itself with the correct version (3.6 or later). Type `exit()` to quit the Python interpreter.
 
