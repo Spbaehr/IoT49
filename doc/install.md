@@ -50,7 +50,7 @@ At the `shell49` prompt, enter
 ports
 ```
 
-This will print the name of the USB port. If more than one name appears, disconnect the ESP32 and repeat the `ports` command. The port name that disappeared is the one you are looking for. If this procedure fails, follow these [alternate instructions](doc/usb_port.md).
+This will print the name of the USB port. If more than one name appears, disconnect the ESP32 and repeat the `ports` command. The port name that disappeared is the one you are looking for. If this procedure fails, follow these [alternate instructions](usb_port.md).
 
 Again at the `shell49` prompt, enter the commands below. Replace `<port>` with the port name returned by the `ports` command. For example, if the port is `COM3` the command is `config --default port COM3`.
 
