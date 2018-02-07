@@ -65,7 +65,7 @@ flash -e
 
 This flashes the MicroPython firmware to the ESP32. **Carefully** check for error messages. If there are none, *press the reset button on the HUZZAH32 board* and rerun the `ports` command.
 
-If the USB port of the ESP32 is no longer listed, disconnect and then reconnect the USB cable and verify that the USB port is listed. Then at the `shell49` command prompt type:
+If the USB port of the ESP32 is no longer listed, disconnect and then reconnect the USB cable and try the `ports` command again. Then at the `shell49` command prompt type:
 
 ```
 connect serial
