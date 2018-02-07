@@ -69,7 +69,7 @@ Typing
 config
 ```
 
-at the `shell49` shows a list of all configuration parameters. Use this to verify that you entered to correct values. `shell49` saves these values in a file so you won't have to retype them each time you use `shell49`.
+at the `shell49` shows a list of all configuration parameters. Use this to verify that you entered values correctly. `shell49` saves these values in a file so you won't have to retype them each time you use `shell49`.
 
 This flashes the MicroPython firmware to the ESP32. **Carefully** check the long and verbose output for error messages. If there are none, *press the reset button on the HUZZAH32 board* and rerun the `ports` command.
 
