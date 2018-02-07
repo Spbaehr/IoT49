@@ -8,7 +8,7 @@ Download and install the CP210X USB driver from [https://www.silabs.com/products
 
 For windows there are two versions: `x64` is for newer 64-Bit CPUs, while `x86` is for 32-Bit computers. Pick the right one for your computer. Unless it is quite old, that's likely `x64`. All Mac's are 64-Bit.
 
-**Note:** Installing drivers requires typically *Administrator Privileges*. On the EECS IoT49 Lab computers the USB driver has already been installed for you.
+**Note:** Installing drivers typically requires *Administrator Privileges*. On the EECS IoT49 Lab computers the USB driver has already been installed for you.
 
 ## 2) Install Python 3
 
