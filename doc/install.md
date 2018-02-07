@@ -99,7 +99,7 @@ From now on, when you start `shell49` (without the `-a`), it automatically conne
 
 **Note:** Do not confuse the different command prompts:
 
-* Mac/Windows command prompt: Used to run Mac/Windows software (e.g. `ls`, `dir`, `pip`) and to start `shell49`.
+* Mac/Linux/Windows command prompt: Used to run computer software (e.g. `ls`, `dir`, `pip`) and to start `shell49`.
 * `shell49` prompt: used to interact with the ESP32 board using commands such as `flash`, `repl`, `ports`.
 * `repl` prompt: use to run Python on the ESP32 board. If you get error messages such as `run is not a valid Python instruction` it may be that you are trying to execute a `shell49` with Python. Quit `repl` with `Ctrl-X`, make sure you are at the `shell49` prompt, and try again.
 
