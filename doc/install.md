@@ -50,9 +50,9 @@ At the `shell49` prompt, enter
 ports
 ```
 
-This will print the name of the USB port. If more than one name appears, disconnect the ESP32 and repeat the `ports` command. The port name that disappeared is the one you are looking for. If this procedure fails, follow these [alternate instructions](usb_port.md).
+This will print the name of the USB port. If more than one name appears, disconnect the ESP32 and repeat the `ports` command. The port name that disappeared is the one you are looking for. If this procedure fails, follow these [alternate instructions](doc/usb_port.md).
 
-Again at the `shell49` prompt, enter the commands below. Replace `<port>` with the port name returned by the `ports` command.
+Again at the `shell49` prompt, enter the commands below. Replace `<port>` with the port name returned by the `ports` command. For example, if the port is `COM3` the command is `config --default port COM3`.
 
 ```
 config --default port <port>
@@ -61,7 +61,9 @@ config --default time_offset 0
 flash -e
 ```
 
-This flashes the MicroPython firmware to the ESP32. Check for error messages. If there are none, press the reset button on the HUZZAH32 board, then type:
+This flashes the MicroPython firmware to the ESP32. **Carefully** check for error messages. If there are none, *press the reset button on the HUZZAH32 board* and rerun the `ports` command.
+
+If the USB port the ESP32 is connected to is no longer listed, disconnect and then reconnect the USB cable and verify that the USB port is listed. Then at the `shell49` command prompt type:
 
 ```
 connect serial
@@ -93,12 +95,18 @@ When you are done experimenting, type `Ctrl-X` followed by `Ctrl-D` to exit `she
 
 From now on, when you start `shell49` (without the `-a`) it automatically connects to the ESP32 and you can use commands such as `repl` (`help` at the prompt lists other available commands). Flashing is only needed the first time or to update or reinstall MicroPython.
 
+**Note:** Do not confuse the different command prompts:
+
+* Mac/Windows command prompt: Used to run Mac/Windows software (e.g. `ls`, `dir`, `pip`) and to start `shell49`.
+* `shell49` prompt: used to interact with the ESP32 board using commands such as `flash`, `repl`, `ports`.
+* `repl` prompt: use to run Python on the ESP32 board. If you get error messages such as `run is not a valid Python instruction` it may be that you are trying to execute a `shell49` with Python. Quit `repl` with `Ctrl-X`, make sure you are at the `shell49` prompt, and try again.
+
 ## 6) Get a Text Editor
 
 To write programs you need a text editor. Any plain text editor works (e.g. `TextEdit` or `Notepad`), but an editor with Python syntax highlighting helps catching errors.
 
 A [web search](https://wiki.python.org/moin/PythonEditors) lists many options to choose from. If you are already familiar with a suitable editor, use it.
 
-If you prefer an ```Integrated Programming Environment (IDE)``` which  keeps track of your project, you could try the [Atom Editor](https://atom.io), used in the lecture.
+If you prefer an ```Integrated Programming Environment (IDE)``` which  keeps track of your project, you might consider the [Atom IDE](https://atom.io), used in the lecture.
 
-`Atom` comes with many optional plug-ins with useful features. For example, `linter-pyflakes` highlights Python syntax errors in the editor window. Search the web for documentation and tutorials and do not hesitate posing questions and sharing tips on `Piazza`.
+`Atom` comes with many optional plug-ins with useful features. For example, `linter-pyflakes`, when installed, highlights Python syntax errors in the editor window. Search the web for documentation and tutorials and do not hesitate posing questions and sharing tips on `Piazza`.
