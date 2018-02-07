@@ -52,7 +52,7 @@ ports
 
 This will print the name of the USB port. If more than one name appears, disconnect the ESP32 and repeat the `ports` command. The port name that disappeared is the one you are looking for. If this procedure fails, follow these [alternate instructions](usb_port.md).
 
-*Note:* Some USB cables are only for charging and miss the necessary wires for data communication. If the `ports` command does not display a port name, try with a different cable, e.g. one available in the lab.
+**Note:** Some USB cables are only for charging and miss the necessary wires for data communication. If the `ports` command does not display a port name, try with a different cable, e.g. one available in the lab.
 
 Again at the `shell49` prompt, enter the commands below. Replace `<port>` with the port name returned by the `ports` command. For example, if the port is `COM3` the command is `config --default port COM3`.
 
