@@ -93,9 +93,9 @@ led(0)
 
 to conserve energy.
 
-When you are done experimenting, type `Ctrl-X` followed by `Ctrl-D` to exit `shell49`.
+When you are done experimenting, type `Ctrl-X` to exit `repl` and return to the `shell49` command prompt. `Ctrl-D` exits `shell49` and returns to the Mac/Windows command prompt.
 
-From now on, when you start `shell49` (without the `-a`) it automatically connects to the ESP32 and you can use commands such as `repl` (`help` at the prompt lists other available commands). Flashing is only needed the first time or to update or reinstall MicroPython.
+From now on, when you start `shell49` (without the `-a`), it automatically connects to the ESP32 and you can use commands such as `repl` (`help` at the prompt lists other available commands). Flashing is only needed once or to update or reinstall MicroPython.
 
 **Note:** Do not confuse the different command prompts:
 
