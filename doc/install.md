@@ -71,7 +71,7 @@ config
 
 at the `shell49` shows a list of all configuration parameters. Use this to verify that you entered to correct values. `shell49` saves these values in a file so you won't have to retype them each time you use `shell49`.
 
-This flashes the MicroPython firmware to the ESP32. **Carefully** check for error messages. If there are none, *press the reset button on the HUZZAH32 board* and rerun the `ports` command.
+This flashes the MicroPython firmware to the ESP32. **Carefully** check the long and verbose output for error messages. If there are none, *press the reset button on the HUZZAH32 board* and rerun the `ports` command.
 
 If the USB port of the ESP32 is no longer listed, disconnect and then reconnect the USB cable and try the `ports` command again. Then at the `shell49` command prompt type:
 
