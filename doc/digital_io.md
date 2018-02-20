@@ -236,4 +236,8 @@ button.irq(button_irq_handler, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING)
 print("Return control to REPL; interrupts continue in background")
 ```
 
+**Note:** On the ESP32, MicroPython interrupt handlers are scheduled for later execution by the interpreter. Hence memory allocation (heap) is permitted. This comes at the expense of long interrupt latency (~ 1ms).
+
+MicroPython on other boards (e.g. Pyboard) achieve much lower interrupt latency (few us) but prohibit memory allocation in interrupt handlers.
+
 Consult the MicroPython manual for more information about [writing interrupt handlers](http://docs.micropython.org/en/latest/pyboard/reference/isr_rules.html).
