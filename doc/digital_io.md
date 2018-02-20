@@ -72,47 +72,9 @@ The values of the pull-down and pull-up resistors vary from chip-to-chip and pin
 
 ## <a name="pwm">PWM</a>
 
-Pins can be configured to output a square wave without further CPU intervention. Four independent timers are available, each capable of running at a different frequency.
+[Documentation](https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/wiki/pwm)
 
-Example:
-
-```python
-from machine import PWM, Pin
-from board import *
-from time import sleep
-
-# declare pins
-pin1 = Pin(A18, mode=Pin.OUT)
-pin2 = Pin(A19, mode=Pin.OUT)
-pin3 = Pin(A20, mode=Pin.OUT)
-
-# initialize PWM
-# freq is in [Hz], duty in [%]
-pwm1 = PWM(pin1, freq=1000, duty=70)
-pwm2 = PWM(pin2, freq=1000, duty=30)
-pwm3 = PWM(pin3, freq=3000, duty=50)
-
-print("pwm1:", pwm1)
-print("pwm2:", pwm2)
-print("pwm3:", pwm3)
-
-# go about other business (or just take a nap)
-
-sleep(100)
-# release PWM circuitry for later reuse
-pwm1.deinit()
-pwm2.deinit()
-pwm3.deinit()
-
-```
-
-Oscilloscope screen shot:
-
-![PWM Screen shot](pwm.png)
-
-The duty cycle, 0 ... 100%, is the percentage of time of the entire period during which the output stays high.
-
-Note that even with duty=100 the output goes low for a brief period (1/2**15).
+Note that even with duty=100 the output goes low for a brief period.
 
 ## <a name="encoder">Encoder</a>
 
