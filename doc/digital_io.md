@@ -5,6 +5,7 @@
 * [PWM](#pwm)
 * [Encoder](#encoder)
 * [Interrupts](#interrupts)
+* [Timers](#timers)
 
 ## <a name="output">Output</a>
 
@@ -188,7 +189,7 @@ p.irq(handler, trigger=< Pin.IRQ_FALLING | Pin.IRQ_RISING >)
 
 `trigger` may be either `Pin.IRQ_FALLING`, `Pin.IRQ_RISING` or `Pin.IRQ_FALLING | Pin.IRQ_RISING` causing the handler to be called when the input changes from `1 to 0`, `0 to 1`, or in either direction.
 
-`handler` is a Python function with one argument (the `pin` that caused the interrrupt). E.g.
+`handler` is a Python function with one argument (the `pin` that caused the interrupt). E.g.
 
 ```python
 def irq_handler(pin):
@@ -241,3 +242,7 @@ print("Return control to REPL; interrupts continue in background")
 MicroPython on other boards (e.g. Pyboard) achieve much lower interrupt latency (few us) but prohibit memory allocation in interrupt handlers.
 
 Consult the MicroPython manual for more information about [writing interrupt handlers](http://docs.micropython.org/en/latest/pyboard/reference/isr_rules.html).
+
+## <a name="timers">Timers</a>
+
+[Documentation](https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/wiki/timer)
