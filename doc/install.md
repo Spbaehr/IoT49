@@ -12,25 +12,11 @@ For windows there are two versions: `x64` is for newer 64-Bit CPUs, while `x86` 
 
 ## 2) Install Python 3
 
-Determine if Python is already installed. Open a terminal/command window and type:
-
-```
-python --version
-```
-
-If you get something similar to
-
-```
-Python 3.6.3 :: ...
-```
-
-Python is already installed. The number after the word `Python` is the version. Verify that it is `3.6` or later. If not, you need to install a newer version.
-
-You can [download Python 3](https://www.python.org/downloads/) from the official Python website. If present, make sure to check the box `Add Python to PATH` near the [bottom of the installer window](https://docs.python.org/3/using/windows.html).
-
-Other installers (e.g. `homebrew` on the Mac or `anaconda`) work as well.
+Install [Python 3.6](https://conda.io/miniconda.html). Check the option to add python to the path.
 
 After completing the installation, open a terminal window and type `python` at the prompt. Verify that Python announces itself with the correct version (3.6 or later). Type `exit()` to quit the Python interpreter.
+
+__Note:__ If a version of Python 3.6 is already installed on your computer you may want to give it a try. But beware all testing has been done with the Miniconda distribution and subtle (or not so subtle) problems have been encountered with other versions. `shell49` (below) does not run on Python 2.
 
 ## 3) Install `shell49`
 
