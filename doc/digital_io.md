@@ -96,7 +96,18 @@ p = Pin(id1, mode=Pin.IN, ...)
 enc = ENC(<unit>, p1)
 ```
 
-`<unit>` 0 ...7 is the pulse count unit number.
+`<unit>` 0 ...7 is the pulse count unit number. Choose a different number for each instantiation.
+
+Filtering: Pulse counters feature an optional filter to reject pulses due to `bouncing`. See the [ESP32 API documentation](http://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/pcnt.html) for details.
+
+```Python
+enc.filter(value)          # value 0 ... 1023: enable filter with specified value
+                           # no-count interval: 12.5*value [ns]
+                           # e.g. value=1000 ignores counts for 12.5us
+                           # value < 0: disable filter
+```
+
+
 
 Available functions:
 ```Python
